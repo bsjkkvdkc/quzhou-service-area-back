@@ -11,7 +11,7 @@ class BlogSerializer(serializers.ModelSerializer):
 
 class FeedbackSerializer(serializers.ModelSerializer):
     category_display = serializers.CharField(source='get_category_display', read_only=True)
-    rating_stars = serializers.CharField(source='rating_stars', read_only=True)
+    rating_stars = serializers.CharField(read_only=True)
 
     class Meta:
         model = Feedback
