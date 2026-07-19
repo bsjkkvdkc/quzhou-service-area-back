@@ -21,6 +21,9 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 # 复制项目文件
 COPY . .
 
+# 先执行数据库迁移，再收集静态文件
+RUN python manage.py migrate
+
 # 收集静态文件
 RUN python manage.py collectstatic --noinput
 
