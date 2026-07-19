@@ -1,4 +1,4 @@
-from rest_framework import serializers
+﻿from rest_framework import serializers
 from .models import Blog, Feedback
 
 
@@ -16,6 +16,6 @@ class FeedbackSerializer(serializers.ModelSerializer):
     class Meta:
         model = Feedback
         fields = ['id', 'name', 'contact', 'category', 'category_display', 'priority',
-                  'priority_display', 'subject', 'content', 'rating', 'rating_stars',
+                  'subject', 'content', 'rating', 'rating_stars',
                   'is_read', 'is_resolved', 'created_at', 'updated_at']
         read_only_fields = ['id', 'created_at', 'updated_at']
