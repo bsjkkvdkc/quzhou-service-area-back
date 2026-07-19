@@ -1,0 +1,29 @@
+﻿# Serverless 部署配置 - 腾讯云SCF
+# 使用前需要安装 serverless 框架: npm install -g serverless-tencent-cloud
+
+service: quzhou-service-area-backend
+
+provider:
+  name: tencent
+  runtime: Python3.10
+  region: ap-guangzhou
+  memorySize: 512
+  timeout: 30
+  environment:
+    variables:
+      DJANGO_SETTINGS_MODULE: mysite.settings
+      TZ: Asia/Shanghai
+
+functions:
+  api:
+    handler: func.wsgi.handler
+    events:
+      - apigateway:
+          name: api
+          parameters:
+            serviceId: svc-${param.serviceId}
+            protocol: https
+            environment: release
+
+plugins:
+  - serverless-tencent-cloud
