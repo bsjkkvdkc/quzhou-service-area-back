@@ -1,0 +1,39 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Django
+db.sqlite3
+*.log
+media/
+staticfiles/
+
+# Environment variables
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Railway
+railway.json
